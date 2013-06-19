@@ -11,7 +11,7 @@ class Api::V1::RegistrationsController < Devise::RegistrationsController
       sign_in(resource, :store => false)
       render :status => 200,
            :json => { :success => true,
-                      :info => "Registered",
+                      :info => t("devise.registrations.signed_up"),
                       :data => { :user => resource,
                                  :auth_token => current_user.authentication_token } }
     else
