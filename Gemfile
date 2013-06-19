@@ -20,6 +20,16 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :test do
+  gem 'rspec-rails', '>= 2.9.0'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+end
+
+group :development, :test do
+  gem 'factory_girl_rails', '~> 4.2.0'
+end
+
 gem 'jquery-rails'
 gem 'devise'
 gem 'activeadmin'
