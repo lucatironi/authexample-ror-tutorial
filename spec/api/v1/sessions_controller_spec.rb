@@ -7,7 +7,7 @@ describe Api::V1::SessionsController do
   let(:json_response) { response.body }
   let(:parsed_response) { JSON.parse(json_response) }
 
-  describe "create" do
+  describe "POST 'create'" do
     context "with valid credentials" do
       before { post '/api/v1/sessions.json', user: { email: user.email, password: user.password } }
 
@@ -29,7 +29,7 @@ describe Api::V1::SessionsController do
     end
   end
 
-  describe "destroy" do
+  describe "DELETE 'destroy'" do
     context "with valid credentials" do
       before { delete '/api/v1/sessions.json', nil, { 'HTTP_AUTHORIZATION' => "Token token=\"#{user.authentication_token}\"" } }
 

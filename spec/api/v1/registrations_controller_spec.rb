@@ -5,7 +5,7 @@ describe Api::V1::RegistrationsController do
   let(:json_response) { response.body }
   let(:parsed_response) { JSON.parse(json_response) }
 
-  describe "create" do
+  describe "POST 'create'" do
     context "with valid credentials" do
       before(:all) { post '/api/v1/registrations.json', user: { name: 'John Doe', email: 'test@example.com', password: 'password' } }
 

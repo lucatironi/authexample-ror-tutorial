@@ -51,7 +51,7 @@ describe Api::V1::TasksController do
     end
   end
 
-  describe "create" do
+  describe "POST 'create'" do
     context "with valid credentials" do
       before { post '/api/v1/tasks.json', { :task => { :title => 'Test Task' } }, { 'HTTP_AUTHORIZATION' => "Token token=\"#{user.authentication_token}\"" } }
 
@@ -82,7 +82,7 @@ describe Api::V1::TasksController do
     end
   end
 
-  describe "open" do
+  describe "PUT 'open'" do
     context "with valid credentials" do
       before { put "/api/v1/tasks/#{completed_task.id}/open.json", nil, { 'HTTP_AUTHORIZATION' => "Token token=\"#{user.authentication_token}\"" } }
 
@@ -115,7 +115,7 @@ describe Api::V1::TasksController do
     end
   end
 
-  describe "complete" do
+  describe "PUT 'complete'" do
     context "with valid credentials" do
       before { put "/api/v1/tasks/#{task.id}/complete.json", nil, { 'HTTP_AUTHORIZATION' => "Token token=\"#{user.authentication_token}\"" } }
 
