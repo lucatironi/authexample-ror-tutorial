@@ -15,7 +15,7 @@ class Api::V1::TasksController < ApplicationController
     else
       render :status => :unprocessable_entity,
              :json => { :success => false,
-                        :info => @task.errors,
+                        :info => @task.errors.full_messages,
                         :data => {} }
     end
   end
